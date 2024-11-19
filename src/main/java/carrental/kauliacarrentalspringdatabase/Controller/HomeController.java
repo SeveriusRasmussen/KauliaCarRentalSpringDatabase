@@ -1,6 +1,5 @@
 package carrental.kauliacarrentalspringdatabase.Controller;
 
-import carrental.kauliacarrentalspringdatabase.Model.CarType;
 import carrental.kauliacarrentalspringdatabase.Model.Cars;
 import carrental.kauliacarrentalspringdatabase.Service.KauliaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +15,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class HomeController {
     @Autowired
     KauliaService service;
-
-    @Autowired
-
 
     @GetMapping("/")
     public String home() {
@@ -45,12 +41,7 @@ public class HomeController {
                                 @RequestParam("registrationYear") int registrationYear,
                                 @RequestParam("registrationMonth") int registrationMonth,
                                 @RequestParam("odometer") int odometer) {
-        // Find CarType fra Databasen
-        CarType carType = carTypeRepository.findById(carTypeId)
-                        .orElseThrow(() -> new IllegalArgumentException("Invalid CarType ID: " + carTypeId));
-
-        System.out.println("CarType_id: " + newCar.getCarType());
-        System.out.println("Brand: " + newCar.getBrand());
+        Cars newCar = new Cars(carTypeId, brand, model, fuelType, registrationNumber, registrationYear, registrationMonth, odometer);
         service.addCar(newCar);
         return "redirect:/carMenu";
     }

@@ -19,6 +19,8 @@ public class KauliaService {
         carRepo.addCar(newCar);
     }
 
+
+
     // renters methods________________________
 
 

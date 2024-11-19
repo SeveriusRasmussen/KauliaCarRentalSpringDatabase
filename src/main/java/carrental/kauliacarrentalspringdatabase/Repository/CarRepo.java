@@ -14,6 +14,7 @@ public class CarRepo {
     //C make a new car
     public void addCar(Cars newCar) {
         String sql = "INSERT INTO cars (carType_id, brand, model, fuel_type, registration_number, registration_year, registration_month, odometer) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-        template.update(sql, newCar.getCarType(), newCar.getBrand(), newCar.getModel(), newCar.getFuelType(), newCar.getRegistrationNumber(), newCar.getRegistrationYear(), newCar.getRegistrationMonth(), newCar.getOdometer());
+        template.update(sql, newCar.getCarTypeId(), newCar.getBrand(), newCar.getModel(), newCar.getFuelType(), newCar.getRegistrationNumber(), newCar.getRegistrationYear(), newCar.getRegistrationMonth(), newCar.getOdometer());
     }
+
 }

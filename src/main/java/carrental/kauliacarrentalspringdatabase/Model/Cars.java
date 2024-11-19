@@ -2,7 +2,7 @@ package carrental.kauliacarrentalspringdatabase.Model;
 
 public class Cars {
     private int id;
-    private CarType carType; // Prøv int her?
+    private int carTypeId; // Prøv int her?
     private String brand;
     private String model;
     private String fuelType;
@@ -12,8 +12,8 @@ public class Cars {
     private int odometer;
 
 
-    public Cars(CarType carType, String brand, String model, String fuelType, String registrationNumber, int registrationYear, int registrationMonth, int odometer) {
-        this.carType = carType; //initialize the CarType
+    public Cars(int carTypeId, String brand, String model, String fuelType, String registrationNumber, int registrationYear, int registrationMonth, int odometer) {
+        this.carTypeId = carTypeId; //initialize the CarType
         this.brand = brand;
         this.model = model;
         this.fuelType = fuelType;
@@ -28,8 +28,8 @@ public class Cars {
         return id;
     }
 
-    public CarType getCarType() {
-        return carType;
+    public int getCarTypeId() {
+        return carTypeId;
     }
 
     public String getBrand() {
@@ -65,8 +65,8 @@ public class Cars {
         this.id = id;
     }
 
-    public void setCarType(CarType carType) {
-        this.carType = carType;
+    public void setCarTypeId(int carTypeId) {
+        this.carTypeId = carTypeId;
     }
 
     public void setBrand(String brand) {
