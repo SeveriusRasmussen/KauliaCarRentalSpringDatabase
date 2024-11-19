@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>Create Car</title>
+  </head>
+  <body>
+    <h1> HELLO CAR CREATOR! </h1>
+    <a href="/carMenu">Tilbage til Car Menu</a>
+
+
+    <form action="/carMenu/create" method="post">
+      <br>
+        <!--
+        Giver brugeren mulighed for at vælge en CarType fra en liste på en separat side
+        og derefter vende tilbage til oprettelsessiden med det valgt CarType_id
+        Man bruge en kombination af JavaScript og HTML-formularer.
+        -->
+      <label>Car Type</label>
+      <select name="CarType_id" id="carTypeSelect">
+        <option value="1">Type 1</option>
+        <option value="2">Type 2</option>
+        <option value="3">Type 3</option>
+        <option value="4">Type 4</option>
+        <option value="5">Type 5</option>
+        <option value="6">Type 6</option>
+        <option value="7">Type 7</option>
+        <option value="8">Type 8</option>
+        <option value="9">Type 9</option>
+        <option value="10">Type 10</option>
+      </select>
+      <button type="button" onclick="window.location.href='/selectCarType'">Choose Car Type</button>
+
+      <br>
+      <label>Brand</label>
+      <select name="brand">
+        <option value="Audi">Audi</option>
+        <option value="Ferrari">Ferrari</option>
+        <option value="Tesla">Tesla</option>
+        <option value="Lamborghini">Lamborghini</option>
+        <option value="Bentley">Bentley</option>
+        <option value="Volkswagen">Volkswagen</option>
+      </select>
+
+      <!-- Just a idea with list of car pictures to choose from -->
+      <!--
+    <style>
+      .brand-option {
+        display: inline-block;
+        margin: 10px;
+        text-align: center;
+      }
+
+      .brand-option input[type="radio"] {
+        display: none;
+      }
+
+      .brand-option label {
+        cursor: pointer;
+      }
+
+      .brand-option img {
+        width: 100px; /* Just an example size */
+        height: auto;
+        border: 2px solid transparent;
+        transition: border-color 0.3s;
+      }
+
+      .brand-option input[type="radio"]:checked + label img {
+        border-color: blue; /* Highlight selected image */
+      }
+    </style>
+
+    <div>
+      <label>Brand</label>
+      <div class="brand-option">
+        <input type="radio" id="audi" name="brand" value="Audi">
+        <label for="audi">
+          <img src="path/to/audi.jpg" alt="Audi">
+          <div>Audi</div>
+        </label>
+      </div>
+      <div class="brand-option">
+        <input type="radio" id="ferrari" name="brand" value="Ferrari">
+        <label for="ferrari">
+          <img src="path/to/ferrari.jpg" alt="Ferrari">
+          <div>Ferrari</div>
+        </label>
+      </div>
+      <div class="brand-option">
+        <input type="radio" id="tesla" name="brand" value="Tesla">
+        <label for="tesla">
+          <img src="path/to/tesla.jpg" alt="Tesla">
+          <div>Tesla</div>
+        </label>
+      </div>
+      --- Repeat for other brands ---
+    </div>
+      -->
+
+      <br>
+      <label>Model</label>
+      <input type="text" name="model" maxLength="20">
+
+      <br>
+      <label>Fuel Type</label>
+      <select name="fuelType">
+        <option value="Diesel">Diesel</option>
+        <option value="Gasoline">Gasoline</option>
+        <option value="Electric">Electric</option>
+      </select>
+
+      <br>
+      <label>Registed Number</label>
+      <input type="text" name="registrationNumber" maxLength="15">
+
+      <br>
+      <label>Registed Year</label>
+      <input type="number" name="registrationYear" min="1950" max="2024">
+
+      <br>
+      <label>Registed Month</label>
+      <input type="number" name="registrationMonth" min="1" max="12">
+
+      <br>
+      <label>Kilometers in total driven</label>
+      <input type="number" name="odometer" min="0" max="999999">
+
+      <br>
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        // Set the select CarType_id from localStorage
+        const selectedCarTypeId = localStorage.getItem('selectedCarTypeId');
+        if (selectedCarTypeId) {
+            document.getElementById('carTypeSelect').value = selectedCarTypeId;
+            // Optionally clear the stored value after using it
+            localStorage.removeItem('selectedCarTypeId');
+        }
+    </script>
+  </body>
+</html>
